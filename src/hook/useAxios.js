@@ -1,0 +1,55 @@
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { axiosClient } from '../api/axios';
+
+const useAxios = (method, api, body, options, deps) => {
+    const [isLoading, setLoading] = useState(false);
+    const [response, setResponse] = useState('');
+    const [error, setError] = useState('');
+
+    const axiosController = new AbortController();
+
+    useEffect(() => {
+        if (isLoading === false) {
+            setLoading(true);
+
+            axiosClient[method](api, body, {
+                ...options,
+                signal: axiosController.signal,
+            })
+                .then((response) => {
+                    setResponse(response);
+                })
+                .catch((error) => {
+                    setError(error);
+                })
+                .then(() => {
+                    setLoading(false);
+                });
+        }
+
+        return () => {
+            if (isLoading === true) {
+                axiosController.abort();
+                setLoading(false);
+            }
+        };
+    }, [...deps]);
+
+    return [response, error, isLoading];
+};
+
+useAxios.propTypes = {
+    method: PropTypes.string.isRequired,
+    api: PropTypes.string.isRequired,
+    body: PropTypes.object,
+    options: PropTypes.object,
+    deps: PropTypes.array.isRequired,
+};
+
+useAxios.defaultProps = {
+    body: {},
+    options: {},
+};
+
+export default useAxios;

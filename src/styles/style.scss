@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+body {
+    font-family: "Rubik", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+    background-color: #F3F3F3;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+
+input,
+textarea,
+button {
+    border-radius: 0;
+    outline: none;
+}
+
+button,
+button[type="submit"],
+input[type="submit"],
+button[type="button"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+/* width */
+div::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+div::-webkit-scrollbar-track {
+    background: #F5F5F5;
+}
+
+/* Handle */
+div::-webkit-scrollbar-thumb {
+    background: #dfe0e0;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+div::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+    cursor: pointer;
+}
